@@ -1,0 +1,14 @@
+zerops:
+  - setup: app
+    build:
+      base: nodejs@latest
+      buildCommands:
+        - npm install
+        - npm run build
+      deployFiles: .
+    run:
+      base: nodejs@latest
+      ports:
+        - port: 20127
+          httpSupport: true
+      start: npm start
